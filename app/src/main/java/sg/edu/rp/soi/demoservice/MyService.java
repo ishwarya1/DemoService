@@ -4,6 +4,7 @@ import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
 import android.util.Log;
+import android.widget.Toast;
 
 public class MyService extends Service {
     boolean started;
@@ -32,6 +33,7 @@ public class MyService extends Service {
     @Override
     public void onDestroy() {
         Log.d("Service", "Service exited");
+        Toast.makeText(this, "Service stopped", Toast.LENGTH_SHORT).show();
         super.onDestroy();
     }
 
